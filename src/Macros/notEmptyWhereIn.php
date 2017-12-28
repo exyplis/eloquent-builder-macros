@@ -4,7 +4,7 @@ namespace Exyplis\EloquentBuilderMacros\Macros;
 
 use Illuminate\Database\Eloquent\Builder;
 
-/**
+/*
  * Check is specified param is empty,
  * if not, adds `whereIn` condition to exiting query
  *
@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Builder;
  *
  * @return Builder
  */
-Builder::macro("notEmptyWhereIn", function ($column, $params) {
-    $this->when(! empty($params), function (Builder $query) use ($column, $params) {
+Builder::macro('notEmptyWhereIn', function ($column, $params) {
+    $this->when(!empty($params), function (Builder $query) use ($column, $params) {
         return $query->whereIn($column, $params);
     });
 
