@@ -4,7 +4,7 @@ namespace Exyplis\EloquentBuilderMacros\Macros;
 
 use Illuminate\Database\Eloquent\Builder;
 
-/**
+/*
  * Orders sub-query results.
  *
  * @author @reinink
