@@ -5,7 +5,7 @@ namespace Exyplis\EloquentBuilderMacros\Macros;
 use Illuminate\Database\Query\Builder;
 
 /*
- * Search throuth one or multiple columns in table.
+ * Search through one or multiple columns in table.
  *
  * @author @freekmurze
  *
