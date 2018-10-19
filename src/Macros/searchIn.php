@@ -20,6 +20,4 @@ Builder::macro('searchIn', function ($attributes, string $needle) {
             $query->orWhere($attribute, 'LIKE', "%{$needle}%");
         }
     });
-
-    return $this;
 });
