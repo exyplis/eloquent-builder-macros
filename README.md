@@ -153,7 +153,7 @@ if($condition, $column, $operator, $value)
 ##### Signature:
 
 ```php
- searchIn($attrtibutes, $needle)
+ searchIn($attributes, $needle)
 ```
 
 ##### Example:
