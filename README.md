@@ -56,7 +56,7 @@ notEmptyWhere($column,$param)
 ##### Example:
 
 ```diff
-- Model::when('$request->has('key'), function($query){
+- Model::when($request->has('key'), function($query){
 -    return $query->where('column',$request->input('key');
 - })->get();
 
@@ -77,7 +77,7 @@ notEmptyWhereIn($column,$params)
 ##### Example:
 
 ```diff
-- Model::when('$request->has('user_ids'), function($query){
+- Model::when($request->has('user_ids'), function($query){
 -        return $query->whereIn('user_id', $request->input('user_ids');
 -    })->get();
 + Model::notEmptyWhereIn('column',$request->input('user_ids'))->get()
