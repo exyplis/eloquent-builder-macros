@@ -10,11 +10,14 @@ use Illuminate\Database\Query\Builder;
  * @author @freekmurze
  *
  * @param string|array $attributes
- * @param string $needle
+ * @param string|null $needle
  *
  * @return Builder
  */
-Builder::macro('searchIn', function ($attributes, string $needle) {
+Builder::macro('searchIn', function ($attributes, $needle) {
+    if (is_null($needle)) {
+        return $this;
+    }
     return $this->where(function (Builder $query) use ($attributes,$needle) {
         foreach (array_wrap($attributes) as $attribute) {
             $query->orWhere($attribute, 'LIKE', "%{$needle}%");
