@@ -18,6 +18,7 @@ Builder::macro('searchIn', function ($attributes, $needle) {
     if (is_null($needle)) {
         return $this;
     }
+
     return $this->where(function (Builder $query) use ($attributes,$needle) {
         foreach (array_wrap($attributes) as $attribute) {
             $query->orWhere($attribute, 'LIKE', "%{$needle}%");
