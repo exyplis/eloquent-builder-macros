@@ -2,6 +2,10 @@
 
 All notable changes to `exyplis/eloquent-builder-macros` will be documented in this file
 
+## 1.1.0 - 2018-10-25
+
+-   for `searchIn` macro, return query without changes, if `$needle` is empty.
+
 ## 1.0.6 - 2018-10-19
 
 -   Make sure the macro works if `$attributes` is a string.
