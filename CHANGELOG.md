@@ -2,6 +2,10 @@
 
 All notable changes to `exyplis/eloquent-builder-macros` will be documented in this file
 
+## 1.1.1 - 2018-12-03
+
+-   Wrap `$params` into array, to be sure macro works on single values passed
+
 ## 1.1.0 - 2018-10-25
 
 -   for `searchIn` macro, return query without changes, if `$needle` is empty.

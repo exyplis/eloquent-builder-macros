@@ -15,7 +15,7 @@ use Illuminate\Database\Query\Builder;
  */
 Builder::macro('notEmptyWhereIn', function ($column, $params) {
     $this->when(!empty($params), function (Builder $query) use ($column, $params) {
-        return $query->whereIn($column, $params);
+        return $query->whereIn($column, array_wrap($params));
     });
 
     return $this;
