@@ -2,6 +2,10 @@
 
 All notable changes to `exyplis/eloquent-builder-macros` will be documented in this file
 
+## 1.1.2 - 2019-02-27
+
+-   Allow using with Laravel 5.8
+
 ## 1.1.1 - 2018-12-03
 
 -   Wrap `$params` into array, to be sure macro works on single values passed
