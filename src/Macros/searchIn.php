@@ -3,6 +3,7 @@
 namespace Exyplis\EloquentBuilderMacros\Macros;
 
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Arr;
 
 /*
  * Search through one or multiple columns in table.
@@ -20,7 +21,7 @@ Builder::macro('searchIn', function ($attributes, $needle) {
     }
 
     return $this->where(function (Builder $query) use ($attributes,$needle) {
-        foreach (array_wrap($attributes) as $attribute) {
+        foreach (Arr::wrap($attributes) as $attribute) {
             $query->orWhere($attribute, 'LIKE', "%{$needle}%");
         }
     });

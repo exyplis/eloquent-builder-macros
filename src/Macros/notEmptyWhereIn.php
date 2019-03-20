@@ -3,6 +3,7 @@
 namespace Exyplis\EloquentBuilderMacros\Macros;
 
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Arr;
 
 /*
  * Check is specified param is empty,
@@ -15,7 +16,7 @@ use Illuminate\Database\Query\Builder;
  */
 Builder::macro('notEmptyWhereIn', function ($column, $params) {
     $this->when(!empty($params), function (Builder $query) use ($column, $params) {
-        return $query->whereIn($column, array_wrap($params));
+        return $query->whereIn($column, Arr::wrap($params));
     });
 
     return $this;

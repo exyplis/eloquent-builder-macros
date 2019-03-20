@@ -2,6 +2,10 @@
 
 All notable changes to `exyplis/eloquent-builder-macros` will be documented in this file
 
+## 1.1.3 - 2019-03-20
+
+-   Use `Arr` class instead of deprecated helper methods.
+
 ## 1.1.2 - 2019-02-27
 
 -   Allow using with Laravel 5.8
