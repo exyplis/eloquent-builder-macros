@@ -35,7 +35,15 @@ The package will automatically register itself, so you don't need to do anything
 ## Available macros
 
 -   [`notEmptyWhere`](###notEmptyWhere)
+-   [`notEmptyOrWhere`](###notEmptyOrWhere)
 -   [`notEmptyWhereIn`](###notEmptyWhereIn)
+-   [`notEmptyOrWhereIn`](###notEmptyOrWhereIn)
+-   [`notEmptyWhereNotIn`](###notEmptyWhereNotIn)
+-   [`notEmptyOrWhereNotIn`](###notEmptyOrWhereNotIn)
+-   [`notEmptyOrWhereTime`](###notEmptyWhereTime)
+-   [`notEmptyOrWhereDate`](###notEmptyWhereDate)
+-   [`notEmptyOrWhereMonth`](###notEmptyWhereMonth)
+-   [`notEmptyOrWhereYear`](###notEmptyWhereYear)
 -   [`if`](#if)
 -   [`addSubSelect`](#addSubSelect)
 -   [`orderBySub`](#orderBySub)
@@ -63,6 +71,29 @@ notEmptyWhere($column,$param)
 + Model::notEmptyWhere('column',$request->input('key'))->get();
 ```
 
+
+### `notEmptyOrWhere`
+
+Check is passed parameter empty, and if not, adds `orWhere` condition on `$column` to exiting query.
+Useful when you have complex query, with a lot of constructions like
+
+##### Signature:
+
+```php
+notEmptyOrWhere($column,$param)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('key'), function($query){
+-    return $query->orWhere('column',$request->input('key');
+- })->get();
+
++ Model::notEmptyOrWhere('column',$request->input('key'))->get();
+```
+
+
 ### `notEmptyWhereIn`
 
 Check is passed parameter empty, and if not, adds `whereIn` condition on `$column` to exiting query.
@@ -81,6 +112,151 @@ notEmptyWhereIn($column,$params)
 -        return $query->whereIn('user_id', $request->input('user_ids');
 -    })->get();
 + Model::notEmptyWhereIn('column',$request->input('user_ids'))->get()
+```
+
+### `notEmptyOrWhereIn`
+
+Check is passed parameter empty, and if not, adds `orWhereIn` condition on `$column` to exiting query.
+In this case, `$param` should be array.
+
+##### Signature:
+
+```php
+notEmptyOrWhereIn($column,$params)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('user_ids'), function($query){
+-        return $query->orWhereIn('user_id', $request->input('user_ids');
+-    })->get();
++ Model::notEmptyOrWhereIn('column',$request->input('user_ids'))->get()
+```
+
+### `notEmptyWhereNotIn`
+
+Check is passed parameter empty, and if not, adds `whereNotIn` condition on `$column` to exiting query.
+In this case, `$param` should be array.
+
+##### Signature:
+
+```php
+notEmptyWhereNotIn($column,$params)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('user_ids'), function($query){
+-        return $query->whereNotIn('user_id', $request->input('user_ids');
+-    })->get();
++ Model::notEmptyWhereNotIn('column',$request->input('user_ids'))->get()
+```
+
+
+### `notEmptyOrWhereNotIn`
+
+Check is passed parameter empty, and if not, adds `orWhereNotIn` condition on `$column` to exiting query.
+In this case, `$param` should be array.
+
+##### Signature:
+
+```php
+notEmptyOrWhereNotIn($column,$params)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('user_ids'), function($query){
+-        return $query->orWhereNotIn('user_id', $request->input('user_ids');
+-    })->get();
++ Model::notEmptyOrWhereNotIn('column',$request->input('user_ids'))->get()
+```
+
+### `notEmptyWhereTime`
+
+Check is passed parameter empty, and if not, adds `whereTime` condition on `$column` to exiting query.
+Useful when you have complex query, with a lot of constructions like
+
+##### Signature:
+
+```php
+notEmptyWhereTime($column,$param)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('key'), function($query){
+-    return $query->whereTime('column',$request->input('key');
+- })->get();
+
++ Model::notEmptyWhereTime('column',$request->input('key'))->get();
+```
+
+### `notEmptyWhereDate`
+
+Check is passed parameter empty, and if not, adds `whereDate` condition on `$column` to exiting query.
+Useful when you have complex query, with a lot of constructions like
+
+##### Signature:
+
+```php
+notEmptyWhereDate($column,$param)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('key'), function($query){
+-    return $query->whereDate('column',$request->input('key');
+- })->get();
+
++ Model::notEmptyWhereDate('column',$request->input('key'))->get();
+```
+
+### `notEmptyWhereMonth`
+
+Check is passed parameter empty, and if not, adds `whereMonth` condition on `$column` to exiting query.
+Useful when you have complex query, with a lot of constructions like
+
+##### Signature:
+
+```php
+notEmptyWhereMonth($column,$param)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('key'), function($query){
+-    return $query->whereMonth('column',$request->input('key');
+- })->get();
+
++ Model::notEmptyWhereMonth('column',$request->input('key'))->get();
+```
+
+### `notEmptyWhereYear`
+
+Check is passed parameter empty, and if not, adds `whereYear` condition on `$column` to exiting query.
+Useful when you have complex query, with a lot of constructions like
+
+##### Signature:
+
+```php
+notEmptyWhereYear($column,$param)
+```
+
+##### Example:
+
+```diff
+- Model::when($request->has('key'), function($query){
+-    return $query->whereYear('column',$request->input('key');
+- })->get();
+
++ Model::notEmptyWhereYear('column',$request->input('key'))->get();
 ```
 
 ### `if`
