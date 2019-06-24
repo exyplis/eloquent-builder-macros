@@ -2,6 +2,18 @@
 
 All notable changes to `exyplis/eloquent-builder-macros` will be documented in this file
 
+## 1.1.4 - 2019-06-24
+
+-   Add macros `notEmptyOrWhere`.
+-   Add macros `notEmptyOrWhereIn`.
+-   Add macros `notEmptyWhereNotIn`.
+-   Add macros `notEmptyOrWhereNotIn`.
+-   Add macros `notEmptyOrWhereTime`.
+-   Add macros `notEmptyOrWhereDate`.
+-   Add macros `notEmptyOrWhereMonth`.
+-   Add macros `notEmptyOrWhereYear`.
+-   Update examples as diffs in README.md.
+
 ## 1.1.3 - 2019-03-20
 
 -   Use `Arr` class instead of deprecated helper methods.
