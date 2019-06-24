@@ -2,7 +2,7 @@
 
 All notable changes to `exyplis/eloquent-builder-macros` will be documented in this file
 
-## 1.1.4 - 2019-06-24
+## 1.2.0 - 2019-06-24
 
 -   Add macros `notEmptyOrWhere`.
 -   Add macros `notEmptyOrWhereIn`.
