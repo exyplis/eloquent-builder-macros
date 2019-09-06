@@ -15,8 +15,8 @@
         }
     ],
     "require": {
-        "illuminate/support": ">=5.4 <5.9",
-        "illuminate/database": ">=5.4 <5.9"
+        "illuminate/support": ">=5.4 < 7.0",
+        "illuminate/database": ">=5.4 <7.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.3"
